@@ -177,7 +177,7 @@ static void window_load(Window *window) {
           bounds.origin.x,
           lockitron_lock_frame.origin.y + lockitron_lock_frame.size.h - PADDING,
           bounds.size.w,
-          28));
+          32));
   GRect lock_status_frame = layer_get_frame((Layer *)lock_status_text_layer);
   text_layer_set_background_color(lock_status_text_layer, GColorClear);
   text_layer_set_text_alignment(lock_status_text_layer, GTextAlignmentRight);
@@ -187,7 +187,7 @@ static void window_load(Window *window) {
   // lock_count_text_layer
   lock_count_text_layer = text_layer_create(
       GRect(bounds.origin.x, lock_status_frame.origin.y + lock_status_frame.size.h,
-          bounds.size.w, 24));
+          bounds.size.w, 28));
   text_layer_set_background_color(lock_count_text_layer, GColorClear);
   text_layer_set_text_alignment(lock_count_text_layer, GTextAlignmentRight);
   text_layer_set_font(lock_count_text_layer, s_res_gothic_24_bold);
