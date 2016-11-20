@@ -1,0 +1,87 @@
+{
+  "version": "1.0.0",
+  "author": "Hanlon",
+  "private": true,
+  "dependencies": {},
+  "keywords": [
+    "pebble-app"
+  ],
+  "pebble": {
+    "sdkVersion": "3",
+    "resources": {
+      "media": [
+        {
+          "type": "png",
+          "name": "IMAGE_LOCKITRON_LOCK",
+          "file": "images/lockitron_icon_bw.png"
+        },
+        {
+          "type": "png",
+          "name": "IMAGE_UNLOCKED",
+          "file": "images/unlocked_blackonwhite.png"
+        },
+        {
+          "type": "png",
+          "name": "IMAGE_LOCKED",
+          "file": "images/locked_blackonwhite.png"
+        },
+        {
+          "type": "png",
+          "name": "IMAGE_ELLIPSIS",
+          "file": "images/music_icon_ellipsis.png"
+        },
+        {
+          "menuIcon": true,
+          "type": "png",
+          "name": "MENUICON",
+          "file": "images/lockitron_bw_menu_icon.PNG"
+        },
+        {
+          "type": "png",
+          "name": "LOCKITRON_ICON",
+          "file": "images/lockitron_bw-sm.PNG"
+        },
+        {
+          "type": "png",
+          "name": "IMAGE_BASE_LOCK",
+          "file": "images/base_lock.png"
+        },
+        {
+          "type": "png",
+          "name": "IMAGE_TOP_LOCK",
+          "file": "images/top_lock.png"
+        }
+      ]
+    },
+    "projectType": "native",
+    "uuid": "326fccb7-f378-4feb-a406-647eeeccb6c5",
+    "messageKeys": {
+      "readyState": 25,
+      "lockName": 0,
+      "lock": 60,
+      "unlock": 70,
+      "lockCount": 100,
+      "statusText": 90,
+      "action": 1,
+      "selectText": 50
+    },
+    "enableMultiJS": true,
+    "displayName": "PebbleLock",
+    "watchapp": {
+      "onlyShownOnCommunication": false,
+      "hiddenApp": false,
+      "watchface": false
+    },
+    "targetPlatforms": [
+      "aplite",
+      "basalt",
+      "chalk",
+      "diorite",
+      "emery"
+    ],
+    "capabilities": [
+      "configurable"
+    ]
+  },
+  "name": "PebbleLock"
+}

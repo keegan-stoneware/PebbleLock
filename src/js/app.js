@@ -187,7 +187,7 @@ var requestLocks = function() {
 	//start a new XMLHttpRequest
 	var req = new XMLHttpRequest();
 	//open a POST request
-	req.open('GET', url, false);
+	req.open('GET', url);
 	//what to do once the HttpRequest loads
 	req.onload = function() {
 		////console.log("onload");
@@ -200,7 +200,7 @@ var requestLocks = function() {
 			lockIDs = [];
 			lockState = [];
 			//parse the respone text;
-			var JSONresponse = JSON.parse(req.responseText);
+			var JSONresponse = JSON.parse(req.responseText).reverse();
 			for (var i = 0; i < JSONresponse.length; i++) {
 				lockNames[i] = JSONresponse[i].name;
 				lockIDs[i] = JSONresponse[i].id;
@@ -212,7 +212,7 @@ var requestLocks = function() {
 			updateList();
 		} else {
 			//log the ready state and status for troubleshooting
-			////console.log("Ready State:" + req.readState + " and status:" + req.status);
+			console.log("Ready State:" + req.responseText + " and status:" + req.status);
 			//let the user know that requesting the locks failed
 			MessageQueue.sendAppMessage({50: "Error. Please Refresh"});
 		} //end of else with a readystate other than 4 and a status of 200
@@ -306,7 +306,7 @@ Pebble.addEventListener("appmessage", function(e) {
 		//check to see if the lock name mataches the message
 		if (message.indexOf(lockNames[i]) != -1) {
 			console.log("lock being requested is " + lockNames[i]);
-			MessageQueue.sendAppMessage({"statusText": "Knock on door!"});
+			// MessageQueue.sendAppMessage({"statusText": "Knock on door!"});
 			if (message.indexOf("lock") == 2) {
 				console.log("locking " + lockNames[i]);
 				sendHttpRequest(lockIDs[i], "lock");
